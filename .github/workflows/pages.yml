@@ -1,0 +1,39 @@
+name: Vizyon Eskişehir 2036 Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dosyaları al
+        uses: actions/checkout@v4
+
+      - name: GitHub Pages ayarları
+        uses: actions/configure-pages@v5
+
+      - name: Site dosyalarını paketle
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: GitHub Pages'e yayınla
+        id: deployment
+        uses: actions/deploy-pages@v4
