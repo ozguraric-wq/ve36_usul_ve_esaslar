@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#12213d" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Vizyon Eskişehir 2036 – Çalışma Usul ve Esasları eğitim sunumu" />
+    <title>Ratel Dijital · Vizyon Eskişehir 2036</title>
+    <link rel="stylesheet" href="./styles.css?v=20260906-edittext3" />
+  </head>
+  <body>
+    <div class="access-gate" id="access-gate">
+      <div class="gate-noise" aria-hidden="true"></div>
+      <main class="gate-layout">
+        <section class="gate-intro" aria-labelledby="gate-title">
+          <a class="ratel-brand" href="https://rateldijital.com" target="_blank" rel="noreferrer" aria-label="Ratel Dijital web sitesini aç">
+            <img src="./assets/ratel-dijital-readable.png" alt="Ratel Dijital" class="gate-ratel-logo" />
+          </a>
+          <div class="intro-copy">
+            <p class="eyebrow">Ratel Dijital · özel sunum alanı</p>
+            <h1 id="gate-title">Vizyon Eskişehir 2036</h1>
+            <p class="intro-lead">Çalışma Usul ve Esasları eğitim sunumuna hoş geldiniz.</p>
+            <p class="intro-note">Eskişehir Valiliği ve Vizyon Eskişehir 2036 kurumsal kimliğine uygun olarak hazırlanan bu alan, sunumu doğrudan tarayıcı üzerinden yürütmek için tasarlanmıştır.</p>
+          </div>
+          <div class="gate-footer">
+            <span>Ratel Dijital © 2026</span>
+            <a href="https://rateldijital.com" target="_blank" rel="noreferrer">rateldijital.com ↗</a>
+          </div>
+        </section>
+
+        <section class="gate-card-wrap" aria-label="Sunuma giriş">
+          <div class="gate-card">
+            <div class="card-topline"><span class="card-index">01</span><span class="card-status"><i></i> Özel erişim</span></div>
+            <div class="ratel-logo-tile"><img src="./assets/ratel-dijital-readable.png" alt="Ratel Dijital" /></div>
+            <h2>Sunuma giriş</h2>
+            <p class="card-copy">Size iletilen kullanıcı bilgileri ile devam edin.</p>
+            <form id="login-form" autocomplete="on">
+              <label for="username">Kullanıcı adı</label>
+              <input id="username" name="username" type="text" autocomplete="username" required autofocus />
+              <label for="password">Şifre</label>
+              <input id="password" name="password" type="password" autocomplete="current-password" required />
+              <button type="submit" id="login-submit">Sunuma giriş <span aria-hidden="true">↗</span></button>
+              <p class="login-message" id="login-message" role="alert" aria-live="polite"></p>
+            </form>
+            <p class="security-note"><span aria-hidden="true">⌁</span> Demo erişimi tarayıcı üzerinde doğrulanır.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="app-shell is-hidden" id="app-shell">
+      <header class="app-header">
+        <div class="header-brand">
+          <img src="./assets/eskisehir-valiligi.png" alt="T.C. Eskişehir Valiliği" class="valilik-logo" />
+          <span class="header-divider" aria-hidden="true"></span>
+          <span class="header-context">Vizyon Eskişehir <b>2036</b></span>
+        </div>
+        <div class="header-actions">
+          <img src="./assets/vizyon-eskisehir-2036.png" alt="Vizyon Eskişehir 2036" class="vizyon-logo" />
+          <div class="search-box" role="search">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="slide-search" type="search" placeholder="Soru veya anahtar kelime ara" autocomplete="off" aria-label="Sunum içinde ara" />
+            <button class="search-clear" id="clear-search" type="button" aria-label="Aramayı temizle" title="Aramayı temizle">×</button>
+            <kbd>/</kbd>
+            <div class="search-results" id="search-results" role="listbox" aria-label="Arama sonuçları"></div>
+          </div>
+          <span class="slide-count" id="header-slide-count">1 / 67</span>
+          <button class="icon-button" id="open-toc" type="button" aria-label="Slayt listesini aç" title="Slayt listesi">☰</button>
+          <button class="outline-button edit-button" id="edit-button" type="button"><span aria-hidden="true">✎</span> Düzenle</button>
+          <button class="outline-button" id="presentation-button" type="button"><span aria-hidden="true">⛶</span> Sunum modu</button>
+          <button class="logout-button" id="logout-button" type="button">Çıkış</button>
+        </div>
+      </header>
+
+      <main class="presentation-area">
+        <div class="presentation-stage" id="presentation-stage" tabindex="0" aria-label="Sunum slaytı. İleri ve geri gitmek için ok tuşlarını kullanın.">
+          <div class="stage-backdrop" aria-hidden="true"></div>
+          <figure class="slide-frame">
+            <img id="slide-image" src="./slides/slide-01.png" alt="Vizyon Eskişehir 2036 eğitim sunumu, slayt 1" draggable="false" />
+            <div class="slide-rendered-text is-hidden" id="slide-rendered-text" aria-hidden="true"></div>
+            <div class="slide-edit-canvas is-hidden" id="slide-edit-canvas" aria-label="Slayt içerik düzenleme alanı"></div>
+            <div class="slide-edit-overlay is-hidden" id="slide-edit-overlay" aria-live="polite"><strong id="overlay-title"></strong><span id="overlay-note"></span></div>
+            <div class="slide-direct-editor is-hidden" id="slide-direct-editor" aria-label="Slayt üzerinde düzenleme">
+              <div class="direct-editor-head"><span>Slayt üzerinde düzenleme</span><button class="direct-editor-close" id="close-direct-edit" type="button" aria-label="Slayt üzeri düzenlemeyi kapat">×</button></div>
+              <div class="direct-editor-section-label">Slayt metinleri</div>
+              <div class="slide-content-fields" id="slide-content-fields"></div>
+              <div class="direct-editor-section-label">Sunum başlığı ve notu</div>
+              <input id="direct-edit-title" type="text" placeholder="Slayt başlığı / kısa vurgu" aria-label="Slayt üzeri özel başlık" />
+              <textarea id="direct-edit-note" rows="3" placeholder="Sunum sırasında kullanacağınız not veya açıklama" aria-label="Slayt üzeri sunum notu"></textarea>
+              <div class="direct-editor-actions"><button class="direct-save" id="direct-save-edit" type="button">Kaydet</button><button class="direct-cancel" id="direct-cancel-edit" type="button">Vazgeç</button></div>
+            </div>
+            <figcaption class="visually-hidden" id="slide-caption">Slayt 1 / 67</figcaption>
+          </figure>
+          <button class="stage-hit stage-prev" id="stage-prev" type="button" aria-label="Önceki slayt"></button>
+          <button class="stage-hit stage-next" id="stage-next" type="button" aria-label="Sonraki slayt"></button>
+          <div class="stage-hint" id="stage-hint">← → veya dokunarak ilerleyin</div>
+        </div>
+
+        <section class="deck-controls" aria-label="Sunum kontrolleri">
+          <div class="control-row">
+            <button class="control-button" id="previous-button" type="button" aria-label="Önceki slayt" title="Önceki slayt (←)">←</button>
+            <div class="progress-wrap">
+              <div class="progress-labels"><span id="progress-title">Slayt 1</span><span id="progress-percent">%2</span></div>
+              <input class="progress-range" id="progress-range" type="range" min="1" max="67" value="1" aria-label="Slayt seçimi" />
+            </div>
+            <button class="control-button" id="next-button" type="button" aria-label="Sonraki slayt" title="Sonraki slayt (→)">→</button>
+          </div>
+          <div class="control-subrow">
+            <span class="keyboard-note"><kbd>←</kbd><kbd>→</kbd> gezin · <kbd>F</kbd> tam ekran · <kbd>Esc</kbd> çıkış</span>
+            <button class="toc-inline" id="open-toc-inline" type="button">Tüm slaytlar <span aria-hidden="true">↗</span></button>
+          </div>
+        </section>
+      </main>
+
+      <aside class="toc-drawer" id="toc-drawer" aria-label="Slayt listesi" aria-hidden="true">
+        <div class="drawer-head"><div><p class="drawer-kicker">İçerik</p><h2>Slaytlar</h2></div><button class="icon-button" id="close-toc" type="button" aria-label="Slayt listesini kapat">×</button></div>
+        <div class="drawer-rule"></div>
+        <div class="thumbnail-grid" id="thumbnail-grid"></div>
+      </aside>
+      <aside class="edit-drawer" id="edit-drawer" aria-label="Slayt düzenleme alanı" aria-hidden="true">
+        <div class="drawer-head"><div><p class="drawer-kicker">Düzenleme modu</p><h2>Slayt notları</h2></div><button class="icon-button" id="close-edit" type="button" aria-label="Düzenleme alanını kapat">×</button></div>
+        <div class="drawer-rule"></div>
+        <p class="edit-help">Metin kutularını slaydın üzerinde doğrudan düzenleyin. İçerik ve sunum notları bu tarayıcıda saklanır; orijinal slayt görselleri korunur.</p>
+        <label class="edit-label" for="slide-edit-title">Sunum üstü başlık</label>
+        <input class="edit-input" id="slide-edit-title" type="text" placeholder="Bu slayt için kısa başlık" />
+        <label class="edit-label" for="slide-edit-note">Sunum notu / ek açıklama</label>
+        <textarea class="edit-textarea" id="slide-edit-note" rows="7" placeholder="Sunum sırasında hatırlatmak istediğiniz notu yazın…"></textarea>
+        <div class="edit-actions"><button class="edit-save" id="save-edit" type="button">Düzenlemeyi kaydet</button><button class="edit-reset" id="reset-edit" type="button">Bu slaytı sıfırla</button></div>
+        <p class="edit-current" id="edit-current">Slayt 1 için düzenleme</p>
+      </aside>
+      <div class="drawer-scrim" id="drawer-scrim" aria-hidden="true"></div>
+
+      <div class="presenting-toolbar" id="presenting-toolbar" aria-label="Mobil sunum kontrolleri">
+        <button type="button" id="presenting-prev" aria-label="Önceki slayt">←</button>
+        <button type="button" id="presenting-exit" aria-label="Sunum modundan çık">×</button>
+        <button type="button" id="presenting-next" aria-label="Sonraki slayt">→</button>
+      </div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+
+    <script src="./search-index.js?v=20260906-edittext3" defer></script>
+    <script src="./editable-index.js?v=20260906-edittext3" defer></script>
+    <script src="./app.js?v=20260906-edittext3" defer></script>
+  </body>
+</html>
