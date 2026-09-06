@@ -1,4 +1,4 @@
-name: Vizyon Eskişehir 2036 Pages
+name: Deploy Vizyon Eskişehir 2036 presentation
 
 on:
   push:
@@ -11,29 +11,34 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
-
     steps:
-      - name: Dosyaları al
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: GitHub Pages ayarları
+      - name: Rebuild static site bundle
+        run: |
+          mkdir -p _site
+          cat site-bundle/site.tar.gz.part-* > /tmp/ve36-site.tar.gz
+          tar -xzf /tmp/ve36-site.tar.gz -C _site
+          test -f _site/index.html
+
+      - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Site dosyalarını paketle
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: _site
 
-      - name: GitHub Pages'e yayınla
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
