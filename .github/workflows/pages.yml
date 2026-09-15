@@ -29,6 +29,8 @@ jobs:
           mkdir -p _site
           cat site-bundle/site.tar.gz.part-* > /tmp/ve36-site.tar.gz
           tar -xzf /tmp/ve36-site.tar.gz -C _site
+          # Keep large slide assets in the bundle; publish current presentation source.
+          cp index.html app.js _site/
           test -f _site/index.html
 
       - name: Configure Pages
