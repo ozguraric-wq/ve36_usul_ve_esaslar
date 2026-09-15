@@ -2,9 +2,6 @@
   "use strict";
 
   const TOTAL_SLIDES = 67;
-  const USER_HASH = "8c7f7e2a48ccc6d9fd033d80760fd252c445c1b35db68c1b0af86439076bd162";
-  const PASSWORD_HASH = "95f5c93cdf6f7d46d7c7cd41d2b6199ee390f2cc82259ce2233bad2cab194ad3";
-  const SESSION_KEY = "ratel-vizyon-eskisehir-sunum-auth-v1";
   const EDITS_KEY = "ratel-vizyon-eskisehir-sunum-edits-v1";
   const CONTENT_EDITS_KEY = "ratel-vizyon-eskisehir-sunum-content-edits-v1";
   const SEARCH_INDEX = window.SLIDE_SEARCH_INDEX || [];
@@ -14,59 +11,9 @@
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   const imagePath = (number) => `./slides/slide-${String(number).padStart(2, "0")}.png`;
 
-  async function sha256(value) {
-    const bytes = new TextEncoder().encode(value);
-    const digest = await crypto.subtle.digest("SHA-256", bytes);
-    return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
-  }
-
   function showApp() {
-    $("#access-gate").classList.add("is-hidden");
-    $("#app-shell").classList.remove("is-hidden");
     buildThumbnails();
     initDeck();
-  }
-
-  function showMessage(message) {
-    const node = $("#login-message");
-    node.textContent = message;
-  }
-
-  function initLogin() {
-    const form = $("#login-form");
-    const submit = $("#login-submit");
-    const username = $("#username");
-    const password = $("#password");
-    if (!form) return;
-
-    if (sessionStorage.getItem(SESSION_KEY) === "1") {
-      showApp();
-      return;
-    }
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      submit.disabled = true;
-      submit.innerHTML = "Kontrol ediliyor… <span aria-hidden=\"true\">⌁</span>";
-      showMessage("");
-      try {
-        const userHash = await sha256(username.value.trim().toLowerCase());
-        const passwordHash = await sha256(password.value);
-        if (userHash === USER_HASH && passwordHash === PASSWORD_HASH) {
-          sessionStorage.setItem(SESSION_KEY, "1");
-          showApp();
-          return;
-        }
-        showMessage("Kullanıcı adı veya şifre hatalı.");
-        password.value = "";
-        password.focus();
-      } catch {
-        showMessage("Doğrulama başlatılamadı. Lütfen güncel bir tarayıcı kullanın.");
-      } finally {
-        submit.disabled = false;
-        submit.innerHTML = "Sunuma giriş <span aria-hidden=\"true\">↗</span>";
-      }
-    });
   }
 
   function readSlideFromHash() {
@@ -607,11 +554,6 @@
     $("#presenting-prev").addEventListener("click", previousSlide);
     $("#presenting-next").addEventListener("click", nextSlide);
     $("#presenting-exit").addEventListener("click", togglePresentationMode);
-    $("#logout-button").addEventListener("click", () => {
-      sessionStorage.removeItem(SESSION_KEY);
-      window.location.hash = "";
-      window.location.reload();
-    });
     document.addEventListener("fullscreenchange", () => {
       if (!document.fullscreenElement) $("#app-shell").classList.remove("is-presenting");
     });
@@ -645,5 +587,5 @@
     initSearch();
   }
 
-  initLogin();
+  showApp();
 })();

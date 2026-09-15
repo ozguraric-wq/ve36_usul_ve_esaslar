@@ -10,46 +10,7 @@
     <link rel="stylesheet" href="./styles.css?v=20260906-edittext3" />
   </head>
   <body>
-    <div class="access-gate" id="access-gate">
-      <div class="gate-noise" aria-hidden="true"></div>
-      <main class="gate-layout">
-        <section class="gate-intro" aria-labelledby="gate-title">
-          <a class="ratel-brand" href="https://rateldijital.com" target="_blank" rel="noreferrer" aria-label="Ratel Dijital web sitesini aç">
-            <img src="./assets/ratel-dijital-readable.png" alt="Ratel Dijital" class="gate-ratel-logo" />
-          </a>
-          <div class="intro-copy">
-            <p class="eyebrow">Ratel Dijital · özel sunum alanı</p>
-            <h1 id="gate-title">Vizyon Eskişehir 2036</h1>
-            <p class="intro-lead">Çalışma Usul ve Esasları eğitim sunumuna hoş geldiniz.</p>
-            <p class="intro-note">Eskişehir Valiliği ve Vizyon Eskişehir 2036 kurumsal kimliğine uygun olarak hazırlanan bu alan, sunumu doğrudan tarayıcı üzerinden yürütmek için tasarlanmıştır.</p>
-          </div>
-          <div class="gate-footer">
-            <span>Ratel Dijital © 2026</span>
-            <a href="https://rateldijital.com" target="_blank" rel="noreferrer">rateldijital.com ↗</a>
-          </div>
-        </section>
-
-        <section class="gate-card-wrap" aria-label="Sunuma giriş">
-          <div class="gate-card">
-            <div class="card-topline"><span class="card-index">01</span><span class="card-status"><i></i> Özel erişim</span></div>
-            <div class="ratel-logo-tile"><img src="./assets/ratel-dijital-readable.png" alt="Ratel Dijital" /></div>
-            <h2>Sunuma giriş</h2>
-            <p class="card-copy">Size iletilen kullanıcı bilgileri ile devam edin.</p>
-            <form id="login-form" autocomplete="on">
-              <label for="username">Kullanıcı adı</label>
-              <input id="username" name="username" type="text" autocomplete="username" required autofocus />
-              <label for="password">Şifre</label>
-              <input id="password" name="password" type="password" autocomplete="current-password" required />
-              <button type="submit" id="login-submit">Sunuma giriş <span aria-hidden="true">↗</span></button>
-              <p class="login-message" id="login-message" role="alert" aria-live="polite"></p>
-            </form>
-            <p class="security-note"><span aria-hidden="true">⌁</span> Demo erişimi tarayıcı üzerinde doğrulanır.</p>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <div class="app-shell is-hidden" id="app-shell">
+    <div class="app-shell" id="app-shell">
       <header class="app-header">
         <div class="header-brand">
           <img src="./assets/eskisehir-valiligi.png" alt="T.C. Eskişehir Valiliği" class="valilik-logo" />
@@ -69,7 +30,6 @@
           <button class="icon-button" id="open-toc" type="button" aria-label="Slayt listesini aç" title="Slayt listesi">☰</button>
           <button class="outline-button edit-button" id="edit-button" type="button"><span aria-hidden="true">✎</span> Düzenle</button>
           <button class="outline-button" id="presentation-button" type="button"><span aria-hidden="true">⛶</span> Sunum modu</button>
-          <button class="logout-button" id="logout-button" type="button">Çıkış</button>
         </div>
       </header>
 
@@ -142,6 +102,6 @@
 
     <script src="./search-index.js?v=20260906-edittext3" defer></script>
     <script src="./editable-index.js?v=20260906-edittext3" defer></script>
-    <script src="./app.js?v=20260906-edittext3" defer></script>
+    <script src="./app.js?v=public-access" defer></script>
   </body>
 </html>
